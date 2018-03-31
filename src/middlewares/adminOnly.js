@@ -1,4 +1,4 @@
-const adminOnly = (req, res, next) => {
+const adminOnly = function(req, res, next) {
   if (req.user.access > 0) {
     return next()
   }

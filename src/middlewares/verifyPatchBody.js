@@ -1,4 +1,4 @@
-const verifyPatchBody = (list = []) => {
+const verifyPatchBody = function(list = []) {
   return (req, res, next) => {
     if (!req.body.op) {
       return res.status(400).json({

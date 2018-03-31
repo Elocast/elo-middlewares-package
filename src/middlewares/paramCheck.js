@@ -1,4 +1,4 @@
-const paramCheck = list => {
+const paramCheck = function(list) {
   return (req, res, next) => {
     const missingParams = list.filter(item => {
       // split if possible - if not, create new array
