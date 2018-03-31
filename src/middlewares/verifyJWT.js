@@ -1,15 +1,15 @@
-import { verifyJWTToken } from "../libs/auth"
+import { verifyJWTToken } from '../libs/auth'
 
 const verifyJWT = required => {
   return (req, res, next) => {
     try {
-      const token = req.headers["x-access-token"]
+      const token = req.headers['x-access-token']
       req.user = verifyJWTToken(this.config, token)
       next()
     } catch (e) {
       if (required) {
         return res.status(401).json({
-          message: "Invalid access token provided."
+          message: 'Invalid access token provided.'
         })
       }
 

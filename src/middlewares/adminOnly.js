@@ -4,7 +4,7 @@ const adminOnly = (req, res, next) => {
   }
 
   res.status(403).json({
-    message: "Insuficient permissions"
+    message: 'Insuficient permissions'
   })
 }
 

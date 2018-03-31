@@ -2,7 +2,7 @@ const paramCheck = list => {
   return (req, res, next) => {
     const missingParams = list.filter(item => {
       // split if possible - if not, create new array
-      const _item = item.includes(":") ? item.split(":") : [item, "query"]
+      const _item = item.includes(':') ? item.split(':') : [item, 'query']
       return !Object.keys(req[_item[1]]).includes(_item[0])
     })
 

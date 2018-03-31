@@ -2,7 +2,7 @@ const verifyPatchBody = (list = []) => {
   return (req, res, next) => {
     if (!req.body.op) {
       return res.status(400).json({
-        message: "Missing body arguments (op)"
+        message: 'Missing body arguments (op)'
       })
     }
 
@@ -12,24 +12,24 @@ const verifyPatchBody = (list = []) => {
 
     if (!list.includes(req.body.op)) {
       return res.status(403).json({
-        message: "Operation not supported"
+        message: 'Operation not supported'
       })
     }
 
     switch (req.body.op) {
-      case "remove":
-      case "replace": {
+      case 'remove':
+      case 'replace': {
         if (!req.body.path) {
           return res.status(400).json({
-            message: "Missing body arguments (path)"
+            message: 'Missing body arguments (path)'
           })
         }
-        req.body.path = req.body.path.replace("/", "")
+        req.body.path = req.body.path.replace('/', '')
       }
-      case "replace": {
+      case 'replace': {
         if (!req.body.value) {
           return res.status(400).json({
-            message: "Missing body arguments (value)"
+            message: 'Missing body arguments (value)'
           })
         }
       }

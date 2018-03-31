@@ -1,4 +1,4 @@
-import jwt from "jsonwebtoken"
+import jwt from 'jsonwebtoken'
 
 export const verifyJWTToken = (config, token) => {
   return jwt.verify(token, config.JWT_SECRET)
@@ -7,7 +7,7 @@ export const verifyJWTToken = (config, token) => {
 export const createJWToken = (config, details) => {
   return jwt.sign(details.data, config.JWT_SECRET, {
     expiresIn: details.maxAge,
-    algorithm: "HS256"
+    algorithm: 'HS256'
   })
 }
 
